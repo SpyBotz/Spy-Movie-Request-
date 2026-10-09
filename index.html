@@ -2,76 +2,112 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090611">
-<title>SPY MOVIE REQUEST | ULTRA FUTURE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10091b">
+<title>SPY MOVIE REQUEST | Ultra Future</title>
 <style>
-:root{color-scheme:dark;--bg:#090611;--card:#151022;--purple:#a855f7;--cyan:#22d3ee;--muted:#aaa2bd}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#291044,var(--bg) 65%);color:#f5f3ff;font:15px Arial,sans-serif;min-height:100vh}
-header{text-align:center;padding:30px 14px 18px}.logo{font-size:30px;font-weight:900;letter-spacing:2px;color:#d8b4fe}.logo span{color:var(--cyan)}header p{color:var(--muted);font-size:11px;letter-spacing:2px}
-main{max-width:720px;margin:auto;padding:14px}.card{background:#151022ed;border:1px solid #4c2870;border-radius:17px;padding:19px;margin-bottom:16px;box-shadow:0 0 25px #a855f711}
-h2{font-size:18px;margin:0 0 14px}label{display:block;color:#d8b4fe;font-size:13px;margin:12px 0 6px}
-input,textarea,select{width:100%;padding:12px;border:1px solid #443252;background:#0c0914;color:white;border-radius:9px;font-size:15px}textarea{min-height:78px;resize:vertical}
-button,.link{display:inline-block;text-align:center;padding:12px 14px;border:0;border-radius:9px;background:linear-gradient(100deg,#9333ea,#6d28d9);color:white;font-weight:bold;cursor:pointer;text-decoration:none;font-size:13px}
-button:disabled{opacity:.5}.full{width:100%;margin-top:11px}.alt{background:#252036;border:1px solid #514363}.cyan{background:linear-gradient(100deg,#0891b2,#0e7490)}.green{background:linear-gradient(100deg,#16a34a,#15803d)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.small{font-size:12px;color:var(--muted);line-height:1.6}#status{color:var(--cyan);font-size:13px;margin-top:12px;overflow-wrap:anywhere}.hidden{display:none!important}
-.item{background:#0e0a18;border:1px solid #39274b;border-radius:12px;padding:13px;margin-top:10px;overflow-wrap:anywhere}.item button{margin-top:8px}.bubble{white-space:pre-wrap;overflow-wrap:anywhere;padding:10px;margin:8px 0;border-radius:9px;background:#24182f}.bubble.admin{border-left:3px solid var(--cyan)}.bubble.member{border-left:3px solid var(--purple)}footer{text-align:center;padding:20px;color:#80768f;font-size:12px}
+:root{--bg:#090610;--card:#171020;--line:#4a2866;--purple:#8d2cf0;--text:#f7f1ff;--muted:#b8a9c8}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#29113d 0,#10091b 44%,#07050c 100%);font-family:Arial,Helvetica,sans-serif;color:var(--text);min-height:100vh}
+.wrap{max-width:760px;margin:auto;padding:28px 16px 40px}.hero{text-align:center;padding:12px 0 28px}.logo{font-size:clamp(32px,7vw,54px);font-weight:900;letter-spacing:2px;line-height:1.05;color:#d9a5ff;text-shadow:0 0 24px #8d2cf066}.tag{margin-top:14px;color:#bda9cc;letter-spacing:3px;font-size:13px}
+.card{background:#171020eF;border:1px solid var(--line);border-radius:25px;padding:24px;margin:18px 0;box-shadow:0 10px 35px #0005}.card h2{font-size:24px;margin:0 0 12px}.desc{color:var(--muted);line-height:1.65;margin:0 0 18px}
+label{display:block;color:#d9b5f5;margin:15px 0 8px;font-size:15px}input,textarea{width:100%;padding:15px 16px;border-radius:14px;border:1px solid #493451;background:#0d0913;color:#fff;font:inherit;outline:none}input:focus,textarea:focus{border-color:#a34cff;box-shadow:0 0 0 3px #8d2cf022}textarea{min-height:110px;resize:vertical}
+.btn{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;border:0;border-radius:14px;padding:15px 12px;font-size:16px;font-weight:800;cursor:pointer;color:#fff;background:linear-gradient(100deg,#9b2ff0,#6424d9);width:100%;margin-top:12px}.btn.secondary{background:#292137;border:1px solid #51415f}.btn.green{background:#119b50}.btn.blue{background:#0788a9}.btnrow{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btnrow .btn{margin:0}.community{display:grid;grid-template-columns:1fr 1fr;gap:12px}.hint{font-size:13px;color:#b8a9c8;line-height:1.55;margin-top:12px}.status{margin-top:15px;color:#e1caff;line-height:1.5;overflow-wrap:anywhere}.small{font-size:12px;color:#9d8eab;text-align:center;margin-top:24px}
+@media(max-width:440px){.card{padding:20px}.btnrow,.community{grid-template-columns:1fr}.tag{letter-spacing:2px}}
 </style>
 </head>
 <body>
-<header><div class="logo">SPY <span>MOVIE</span></div><div class="logo">REQUEST</div><p>✦ ULTRA FUTURE • MOVIE SUPPORT SYSTEM ✦</p></header>
-<main>
-<section class="card">
-<h2>🔐 Member / Admin Login</h2><p class="small">Apna account banao ya login karo. Apne account se hi purani chat dekh paoge.</p>
-<form id="authForm"><label>Email</label><input id="email" type="email" autocomplete="email" required maxlength="254">
-<label>Password</label><input id="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128">
-<label>Your Name (signup ke liye)</label><input id="displayName" maxlength="60" placeholder="Apna naam">
-<button class="full" id="loginBtn">LOGIN</button><button class="full alt" type="button" id="signupBtn">CREATE MEMBER ACCOUNT</button></form>
-<button class="full alt hidden" id="logoutBtn">LOG OUT</button><p id="authStatus" class="small" role="status"></p>
-</section>
-<div id="memberArea" class="hidden">
-<section class="card"><h2>🎬 Send Movie Request</h2><form id="requestForm">
-<label>Movie / Web Series Name</label><input id="movie" required maxlength="150" placeholder="Example: Avatar (2009)">
-<button class="full alt" type="button" id="googleBtn">🔎 CHECK NAME ON GOOGLE</button>
-<label>Release Year</label><input id="year" maxlength="10" placeholder="2026">
-<label>Language / Season / Episode</label><input id="language" maxlength="100" placeholder="Hindi dubbed, S01E01">
-<label>Extra details</label><textarea id="details" maxlength="1000" placeholder="Koi aur detail..."></textarea>
-<button class="full" type="submit">🚀 SEND REQUEST</button></form><p id="requestStatus" class="small"></p></section>
-<section class="card"><h2>💬 My Requests & Replies</h2><p class="small">Request select karo, purane messages padho aur naya message bhejo.</p><div id="myRequests"></div><button class="full alt" id="refreshMember">↻ REFRESH</button></section>
-</div>
-<div id="adminArea" class="hidden"><section class="card"><h2>🛡️ SPY Admin Panel</h2><p class="small">Admin login ke baad sab requests dekh sakte ho. Kisi request ko kholkar reply karo.</p><div id="adminStatus" class="small"></div><div id="allRequests"></div><button class="full alt" id="refreshAdmin">↻ REFRESH REQUESTS</button></section></div>
-<section class="card"><h2>🌐 SPY Community</h2><div class="grid"><a class="link green" id="waLink" target="_blank" rel="noopener">WhatsApp Channel</a><a class="link cyan" id="tgLink" target="_blank" rel="noopener">Telegram Channel</a><a class="link" id="paidLink" target="_blank" rel="noopener">💎 Paid Channel</a><button class="alt" id="shareBtn">📲 SHARE WEBSITE</button></div></section>
-<p id="status" role="status"></p></main><footer>© SPY MOVIE REQUEST • ULTRA FUTURE</footer>
-<script type="module">
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
-/* Replace these values with your Supabase project details. */
-const SUPABASE_URL = "https://YOUR_PROJECT_ID.supabase.co";
-const SUPABASE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
-const LINKS = {whatsapp:"https://whatsapp.com/channel/YOUR_CHANNEL",telegram:"https://t.me/YOUR_CHANNEL",paid:"https://t.me/YOUR_PAID_CHANNEL"};
-const $=id=>document.getElementById(id), client=createClient(SUPABASE_URL,SUPABASE_KEY);
-let user=null,role="member",busy=false;
-$("waLink").href=LINKS.whatsapp;$("tgLink").href=LINKS.telegram;$("paidLink").href=LINKS.paid;
-function say(id,text){$(id).textContent=text}
-function node(tag,text,cls){const el=document.createElement(tag);el.textContent=text??"";if(cls)el.className=cls;return el}
-function button(text,fn,cls="full"){const b=node("button",text,cls);b.type="button";b.addEventListener("click",fn);return b}
-function time(v){return v?new Date(v).toLocaleString():""}
-function fail(id,e){console.error(e);say(id,e?.message||"Error hua. Dobara try karo.")}
-function setBusy(v){busy=v;$("loginBtn").disabled=v;$("signupBtn").disabled=v}
-$("googleBtn").onclick=()=>{const m=$("movie").value.trim();if(!m)return say("requestStatus","Pehle movie name likho.");window.open("https://www.google.com/search?q="+encodeURIComponent(m+" movie release year"),"_blank","noopener")};
-$("signupBtn").onclick=async()=>{if(busy)return;const email=$("email").value.trim(),password=$("password").value,name=$("displayName").value.trim();if(!name)return say("authStatus","Signup ke liye naam bhi likho.");if(!email||password.length<8)return say("authStatus","Valid email aur minimum 8-character password do.");setBusy(true);try{const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:name}}});if(error)throw error;say("authStatus",data.session?"Account ban gaya.":"Signup successful. Email confirmation complete karo, phir login karo.")}catch(e){fail("authStatus",e)}finally{setBusy(false)}};
-$("authForm").onsubmit=async e=>{e.preventDefault();if(busy)return;setBusy(true);try{const {error}=await client.auth.signInWithPassword({email:$("email").value.trim(),password:$("password").value});if(error)throw error;say("authStatus","Login successful.")}catch(e){fail("authStatus",e)}finally{setBusy(false)}};
-$("logoutBtn").onclick=async()=>{const {error}=await client.auth.signOut();if(error)fail("authStatus",error)};
-client.auth.onAuthStateChange((_event,session)=>{user=session?.user||null;setTimeout(updateSession,0)});
-async function updateSession(){$("memberArea").classList.add("hidden");$("adminArea").classList.add("hidden");$("logoutBtn").classList.toggle("hidden",!user);$("authForm").classList.toggle("hidden",!!user);if(!user){role="member";say("authStatus","Login karo ya naya account banao.");return}try{const {data,error}=await client.from("profiles").select("role,display_name").eq("id",user.id).single();if(error)throw error;role=data.role;say("authStatus","Logged in: "+(data.display_name||user.email)+(role==="admin"?" • ADMIN":" • MEMBER"));if(role==="admin"){$("adminArea").classList.remove("hidden");await loadAdmin()}else{$("memberArea").classList.remove("hidden");await loadMine()}}catch(e){fail("authStatus",e)}}
-$("requestForm").onsubmit=async e=>{e.preventDefault();if(!user||role!=="member")return;const movie=$("movie").value.trim();if(!movie)return;const btn=e.submitter;btn.disabled=true;try{const {data,error}=await client.from("requests").insert({owner_id:user.id,movie_name:movie,release_year:$("year").value.trim(),language:$("language").value.trim(),details:$("details").value.trim()}).select("id").single();if(error)throw error;const {error:me}=await client.from("messages").insert({request_id:data.id,author_id:user.id,body:"Movie request: "+movie});if(me)throw me;$("requestForm").reset();say("requestStatus","Request sent successfully!");await loadMine();await openMemberRequest(data.id)}catch(e){fail("requestStatus",e)}finally{btn.disabled=false}};
-async function loadMine(){const box=$("myRequests");box.replaceChildren(node("p","Loading requests...","small"));try{const {data,error}=await client.from("requests").select("id,movie_name,release_year,language,status,created_at").eq("owner_id",user.id).order("created_at",{ascending:false});if(error)throw error;box.replaceChildren();if(!data.length)box.append(node("p","Abhi koi request nahi.","small"));for(const r of data){const item=node("div",null,"item");item.append(node("strong","🎬 "+r.movie_name),node("p","Status: "+r.status+" • "+time(r.created_at),"small"),button("OPEN CHAT",()=>openMemberRequest(r.id)));box.append(item)}}catch(e){fail("status",e)}}
-async function showMessages(id,box){const {data,error}=await client.from("messages").select("id,author_id,body,created_at").eq("request_id",id).order("created_at");if(error)throw error;box.replaceChildren();for(const m of data)box.append(node("div",(m.author_id===user.id?"👤 You":"🛡️ SPY Admin")+"\n"+m.body+"\n"+time(m.created_at),"bubble "+(m.author_id===user.id?"member":"admin")))}
-async function openMemberRequest(id){const box=$("myRequests"),chat=node("div",null,"item");chat.append(node("h3","💬 Conversation"),node("p","Request: "+id,"small"));const msgs=node("div","");chat.append(msgs);try{await showMessages(id,msgs)}catch(e){fail("status",e);return}const form=node("form",""),input=node("textarea",""),send=node("button","SEND MESSAGE","full");input.required=true;input.maxLength=2000;input.placeholder="Admin ko message likho...";form.append(input,send);form.onsubmit=async e=>{e.preventDefault();if(!input.value.trim())return;send.disabled=true;try{const {error}=await client.from("messages").insert({request_id:id,author_id:user.id,body:input.value.trim()});if(error)throw error;input.value="";await openMemberRequest(id)}catch(err){fail("status",err)}finally{send.disabled=false}};chat.append(form,button("↻ REFRESH CHAT",()=>openMemberRequest(id),"full alt"));box.append(chat)}
-$("refreshMember").onclick=loadMine;
-async function loadAdmin(){if(role!=="admin")return;const box=$("allRequests");box.replaceChildren(node("p","Loading...","small"));try{const {data,error}=await client.from("requests").select("id,owner_id,movie_name,release_year,language,details,status,created_at").order("created_at",{ascending:false});if(error)throw error;box.replaceChildren();say("adminStatus","Total requests: "+data.length);for(const r of data){const item=node("div",null,"item");item.append(node("strong","🎬 "+r.movie_name),node("p","Year: "+(r.release_year||"N/A")+" • Language: "+(r.language||"N/A"),"small"),node("p","Member UID: "+r.owner_id,"small"),node("p","Details: "+(r.details||"None"),"small"),node("p","Status: "+r.status+" • "+time(r.created_at),"small"));const sel=node("select","");for(const s of ["Pending","Searching","Available","Unavailable","Replied"]){const o=node("option",s);o.value=s;o.selected=s===r.status;sel.append(o)}item.append(sel,button("UPDATE STATUS",async()=>{try{const {error}=await client.from("requests").update({status:sel.value}).eq("id",r.id);if(error)throw error;await loadAdmin()}catch(e){fail("adminStatus",e)}}, "full alt"),button("OPEN CHAT & REPLY",()=>openAdminChat(r,item)));box.append(item)}}catch(e){fail("adminStatus",e)}}
-async function openAdminChat(r,item){const old=item.querySelector(".admin-chat");if(old){old.remove();return}const area=node("div",null,"admin-chat");area.append(node("h3","💬 Member conversation"));const msgs=node("div","");area.append(msgs);try{await showMessages(r.id,msgs)}catch(e){fail("adminStatus",e);return}const form=node("form",""),input=node("textarea",""),send=node("button","SEND ADMIN REPLY","full cyan");input.required=true;input.maxLength=2000;input.placeholder="Member ko reply...";form.append(input,send);form.onsubmit=async e=>{e.preventDefault();send.disabled=true;try{const {error}=await client.from("messages").insert({request_id:r.id,author_id:user.id,body:input.value.trim()});if(error)throw error;const {error:se}=await client.from("requests").update({status:"Replied"}).eq("id",r.id);if(se)throw se;await loadAdmin()}catch(e){fail("adminStatus",e)}finally{send.disabled=false}};area.append(form,button("↻ REFRESH CHAT",()=>openAdminChat(r,item),"full alt"));item.append(area)}
-$("refreshAdmin").onclick=loadAdmin;
-$("shareBtn").onclick=async()=>{const d={title:"SPY MOVIE REQUEST",text:"Apni movie request SPY par bhejo!",url:location.href.split("?")[0]};try{if(navigator.share)await navigator.share(d);else{await navigator.clipboard.writeText(d.url);say("status","Website link copied!")}}catch(e){if(e.name!=="AbortError")say("status","Share nahi ho saka.")}};
+<main class="wrap">
+  <header class="hero">
+    <div class="logo">SPY MOVIE<br>REQUEST</div>
+    <div class="tag">✦ ULTRA FUTURE • MOVIE SUPPORT SYSTEM ✦</div>
+  </header>
+
+  <section class="card">
+    <h2>🎬 Request a Movie</h2>
+    <p class="desc">Movie ya web series ka naam likho. Request WhatsApp ke through admin ko bhej sakte ho.</p>
+    <form id="requestForm">
+      <label for="memberName">Your Name</label>
+      <input id="memberName" placeholder="Apna naam likho" maxlength="80" required>
+      <label for="movieName">Movie / Web Series Name</label>
+      <input id="movieName" placeholder="Example: Avatar 2022" maxlength="160" required>
+      <label for="details">Extra Details (optional)</label>
+      <textarea id="details" placeholder="Year, language, season/episode, ya koi message"></textarea>
+      <button class="btn" type="submit">📩 SEND MOVIE REQUEST</button>
+      <button class="btn secondary" type="button" id="googleBtn">🔎 CHECK NAME ON GOOGLE</button>
+      <div class="hint">Note: Ye GitHub Pages static website hai. Request website database mein save nahi hoti; WhatsApp se admin ko bheji jaati hai.</div>
+      <div id="status" class="status" role="status"></div>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>🌐 SPY Community</h2>
+    <div class="community">
+      <a class="btn green" id="whatsappChannel" href="#" target="_blank" rel="noopener">WhatsApp Channel</a>
+      <a class="btn blue" id="telegramChannel" href="#" target="_blank" rel="noopener">Telegram Channel</a>
+      <a class="btn" id="paidChannel" href="#" target="_blank" rel="noopener">💎 Paid Channel</a>
+      <button class="btn secondary" id="shareBtn" type="button">📲 SHARE WEBSITE</button>
+    </div>
+    <p class="hint">Admin ke links set karne ke liye neeche diye gaye README mein instructions follow karo.</p>
+  </section>
+  <div class="small">© SPY MOVIE REQUEST • Static GitHub Pages Website</div>
+</main>
+<script>
+/* ===== ADMIN CONFIG: yahan apne links/number daalein =====
+   WhatsApp number: country code ke saath, sirf digits. Example India: 919876543210
+*/
+const CONFIG = {
+  adminWhatsAppNumber: "91YOURNUMBER",
+  whatsappChannelUrl: "https://whatsapp.com/",
+  telegramChannelUrl: "https://t.me/",
+  paidChannelUrl: "https://t.me/"
+};
+
+document.getElementById("whatsappChannel").href = CONFIG.whatsappChannelUrl;
+document.getElementById("telegramChannel").href = CONFIG.telegramChannelUrl;
+document.getElementById("paidChannel").href = CONFIG.paidChannelUrl;
+
+function getRequestText() {
+  const name = document.getElementById("memberName").value.trim();
+  const movie = document.getElementById("movieName").value.trim();
+  const details = document.getElementById("details").value.trim();
+  return `🎬 SPY MOVIE REQUEST\n\n👤 Name: ${name}\n🍿 Movie: ${movie}\n📝 Details: ${details || "Not provided"}\n\n🌐 Website: ${location.href}`;
+}
+document.getElementById("requestForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const name = document.getElementById("memberName").value.trim();
+  const movie = document.getElementById("movieName").value.trim();
+  if (!name || !movie) return;
+  const number = CONFIG.adminWhatsAppNumber;
+  const status = document.getElementById("status");
+  const text = encodeURIComponent(getRequestText());
+  if (!/^\d{10,15}$/.test(number)) {
+    status.textContent = "Admin WhatsApp number set nahi hai. index.html mein CONFIG.adminWhatsAppNumber ko apne country code ke saath number se replace karo. Example: 919876543210";
+    return;
+  }
+  window.open(`https://wa.me/${number}?text=${text}`, "_blank", "noopener");
+  status.textContent = "WhatsApp khul raha hai. Wahan Send button dabakar request admin ko bhej do.";
+});
+document.getElementById("googleBtn").addEventListener("click", function() {
+  const movie = document.getElementById("movieName").value.trim();
+  if (!movie) {
+    document.getElementById("status").textContent = "Pehle movie ka naam likho.";
+    document.getElementById("movieName").focus();
+    return;
+  }
+  window.open("https://www.google.com/search?q=" + encodeURIComponent(movie + " movie release year"), "_blank", "noopener");
+});
+document.getElementById("shareBtn").addEventListener("click", async function() {
+  const shareData = {title: document.title, text: "SPY MOVIE REQUEST website", url: location.href};
+  try {
+    if (navigator.share) await navigator.share(shareData);
+    else if (navigator.clipboard) {
+      await navigator.clipboard.writeText(location.href);
+      alert("Website link copied!");
+    } else {
+      prompt("Website link copy karo:", location.href);
+    }
+  } catch (e) {}
+});
 </script>
 </body>
 </html>
